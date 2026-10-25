@@ -3,239 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>&Princess（アンドプリンセス）- 商業施設・店舗イベント専用プラン</title>
-    <!-- 上品な明朝体フォント（游明朝・Georgia）を読み込み -->
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&display=swap" rel="stylesheet">
+    <title>&Princess | &Princess Event Plan</title>
     <style>
-        * {
-            box-sizing: border-box;
+        body {
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            /* 幻想的なお城の背景画像（bg-castle.jpg）を敷き詰める */
-            background-image: 
-                linear-gradient(to bottom, rgba(240, 235, 250, 0.3), rgba(120, 100, 150, 0.4)),
-                url('bg-castle.jpg');
+            font-family: 'Times New Roman', YuMincho, serif;
+            background-image: url('IMG_4855.jpeg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            font-family: 'Shippori Mincho', 'Yu Mincho', YuMincho, serif;
-            color: #4a3b5c;
-            display: flex;
-            justify-content: center;
-            padding: 20px 10px;
-            min-height: 100vh;
+            color: #333;
         }
-
         .container {
-            width: 100%;
-            max-width: 420px; /* スマホで一番綺麗に収まる幅 */
+            max-width: 600px;
             margin: 0 auto;
-            text-align: center;
-            padding-bottom: 40px;
-        }
-
-        /* 上部のバッジ（立体的で上品なグリーン・ゴールドの縁） */
-        .badge-wrapper {
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-
-        .top-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #5c8d73 0%, #3f6652 100%);
-            color: #ffffff;
-            padding: 8px 22px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            border: 2px solid #dfc37d; /* ゴールドの縁取り */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.4);
-        }
-
-        /* キャッチコピー */
-        .catch-copy {
-            margin-bottom: 30px;
-            padding: 0 10px;
-        }
-
-        .catch-copy p {
-            font-size: 16px;
-            color: #432d3b; /* 濃いローズブラウン系で文字をくっきり */
-            line-height: 1.8;
-            font-weight: 700;
-            text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9); /* 背景に埋もれないようふんわり光らせる */
-        }
-
-        /* メインの説明カード（白っぽく半透明・薄い紫の点線枠） */
-        .main-card {
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1.5px dashed #b19cd9; /* 薄い紫の点線枠 */
-            border-radius: 20px;
-            padding: 30px 20px;
-            margin-bottom: 25px;
-            box-shadow: 0 10px 25px rgba(80, 60, 100, 0.2);
-        }
-
-        .main-card p {
-            font-size: 14px;
-            color: #4a3b5c;
-            line-height: 1.7;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .main-card p.card-title-text {
-            font-weight: 700;
-            font-size: 15px;
-            color: #3b284a;
-        }
-
-        /* お問い合わせボタン */
-        .btn-container {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 14px 20px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            cursor: pointer;
-            font-family: 'Shippori Mincho', 'Yu Mincho', serif;
-        }
-
-        /* 1. 公式LINEボタン（淡いパープル・光沢） */
-        .btn-line {
-            background: linear-gradient(135deg, #d2bfe3 0%, #b89fd8 100%);
-            color: #ffffff;
-            border: 1px solid #e2d2f0;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        /* 2. メールボタン（白・アイボリー背景、パープル系の縁取り） */
-        .btn-mail {
-            background: linear-gradient(135deg, #ffffff 0%, #f7f2fc 100%);
-            color: #6a4c8a;
-            border: 1.5px solid #b89fd8;
-        }
-
-        /* ギャラリーカード */
-        .gallery-card {
-            background: rgba(255, 255, 255, 0.82);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1.5px dashed #b19cd9;
-            border-radius: 20px;
             padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(80, 60, 100, 0.2);
         }
-
-        .gallery-image-box {
-            width: 100%;
-            max-width: 240px;
-            margin: 0 auto 12px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2d2f0;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            background: #fff;
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 215, 0, 0.5);
         }
-
-        .gallery-image-box img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #50c878, #ffd700);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
-
-        .gallery-caption {
-            font-size: 13px;
-            color: #6a4c8a;
-            font-weight: 500;
+        h1 {
+            color: #4a2e35;
+            font-size: 28px;
+            margin-bottom: 10px;
         }
-
-        /* ページ下部（＆Princess ロゴ風） */
-        .footer-area {
-            margin-top: 20px;
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .btn-container {
+            margin-top: 25px;
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            flex: 1;
             text-align: center;
+            padding: 12px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
         }
-
-        .footer-arrow {
-            font-size: 16px;
-            color: #ffffff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-            margin-bottom: 5px;
+        .btn-line {
+            background-color: #06c755;
         }
-
-        .footer-logo {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: 0.05em;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        .btn-email {
+            background-color: #d4af37;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        
-        <!-- 上部のバッジ -->
-        <div class="badge-wrapper">
-            <div class="top-badge">商業施設・店舗イベント専用プラン</div>
-        </div>
-
-        <!-- キャッチコピー -->
-        <div class="catch-copy">
-            <p>お城のドレス、カメラのまばたき。</p>
-            <p>小さな憧れに魔法をかけて</p>
-            <p>物語の世界へご案内いたします。</p>
-        </div>
-
-        <!-- メインの説明カード -->
-        <div class="main-card">
-            <p class="card-title-text">各種店舗・商業施設のファミリー集客に…</p>
-            <p>アンケート回答や相談会の強力なフックとなる、出張型ドレス＆撮影会イベント『＆Princess』</p>
-            
-            <!-- お問い合わせボタン -->
+        <div class="card">
+            <div class="badge">Event Plan</div>
+            <h1>&Princess</h1>
+            <p>商業施設や代理店様向けの高精度なドレスアップ＆フォトブース体験サービス。夢のような空間をお届けします。</p>
             <div class="btn-container">
-                <!-- ※「#」の部分に実際の公式LINEのリンクを入れてください -->
-                <a href="#" class="btn btn-line">公式LINEでお問い合わせ・ご相談</a>
-                <!-- ※「mailto:」のあとに実際のメールアドレスを入れてください -->
-                <a href="mailto:info@example.com" class="btn btn-mail">メールでお問い合わせ・お見積り<span></a>
+                <a href="https://line.me" class="btn btn-line">LINEで相談</a>
+                <a href="mailto:example@example.com" class="btn btn-email">メールで問い合わせ</a>
             </div>
         </div>
-
-        <!-- ギャラリーカード -->
-        <div class="gallery-card">
-            <div class="gallery-image-box">
-                <!-- ギャラリーの写真（画像ファイル名を後から変更できます。例: photo1.jpg） -->
-                <img src="bg-castle.jpg" alt="イベント風景 01">
-            </div>
-            <div class="gallery-caption">イベント風景 01</div>
-        </div>
-
-        <!-- ページ下部 -->
-        <div class="footer-area">
-            <div class="footer-arrow">↓</div>
-            <div class="footer-logo">&amp;Princess</div>
-        </div>
-
     </div>
-
 </body>
 </html>
