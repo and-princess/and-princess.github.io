@@ -6,88 +6,188 @@
     <title>&Princess (アンドプリンセス)</title>
     <style>
         :root {
-            --color-text-main: #4a3b32;
-            --color-text-sub: #726378;
-            --color-gold: #dfb15b;
+            --bg-gradient: linear-gradient(135deg, #f5f0f8 0%, #e6dced 100%);
+            --color-main: #5a4a62;
+            --color-sub: #7b6a83;
+            --accent-purple: #9a81a8;
+            --accent-purple-hover: #866d94;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: var(--color-text-main);
+            color: var(--color-main);
             margin: 0;
             padding: 0;
-            background-color: #fcfbfa;
+            background: var(--bg-gradient);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
         }
+
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-        /* お問い合わせカード */
-        .cta-container {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 480px;
+            padding: 24px 16px;
+            box-sizing: border-box;
             text-align: center;
         }
-        .cta-button {
+
+        /* 上部のバッジ */
+        .top-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.8);
+            color: #6c5878;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 6px 16px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(108, 88, 120, 0.08);
+            border: 1px solid rgba(154, 129, 168, 0.2);
+        }
+
+        /* キャッチコピー */
+        .catchphrase {
+            margin-bottom: 32px;
+        }
+
+        .catchphrase h2 {
+            font-size: 18px;
+            font-weight: normal;
+            line-height: 1.8;
+            margin: 0;
+            color: var(--color-main);
+            letter-spacing: 0.05em;
+        }
+
+        /* カード共通スタイル（点線枠＆白半透明） */
+        .card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 2px dashed rgba(154, 129, 168, 0.4);
+            border-radius: 20px;
+            padding: 24px 20px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(108, 88, 120, 0.06);
+            backdrop-filter: blur(5px);
+        }
+
+        .card-text {
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--color-sub);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* ボタンデザイン */
+        .btn {
             display: block;
-            background: var(--color-gold);
-            color: #fff;
-            padding: 14px;
+            width: 100%;
+            padding: 14px 20px;
             border-radius: 30px;
             text-decoration: none;
-            font-weight: bold;
-            margin: 12px 0;
-            box-shadow: 0 2px 8px rgba(223,177,91,0.3);
-        }
-        .cta-button.sub {
-            background: #726378;
-            box-shadow: 0 2px 8px rgba(114,99,120,0.3);
-        }
-        /* ギャラリーカード */
-        .gallery-card {
-            background: #fff;
-            border-radius: 16px;
-            overflow: hidden;
-            margin: 20px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            padding-bottom: 15px;
-        }
-        .gallery-image {
-            width: 100%;
-            height: 220px;
-            background: #eee;
-        }
-        .gallery-card p {
-            margin: 12px 0 0 0;
-            color: var(--color-text-sub);
             font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box;
+            transition: all 0.2s ease;
+            margin-bottom: 12px;
+        }
+
+        .btn:last-child {
+            margin-bottom: 0;
+        }
+
+        .btn-primary {
+            background: var(--accent-purple);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(154, 129, 168, 0.3);
+        }
+
+        .btn-outline {
+            background: #ffffff;
+            color: var(--accent-purple);
+            border: 1px solid var(--accent-purple);
+            box-shadow: 0 2px 8px rgba(154, 129, 168, 0.1);
+        }
+
+        /* ギャラリーカード部分 */
+        .gallery-image-box {
+            width: 100%;
+            height: 200px;
+            background: #f0ebf5;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b5a4c2;
+            font-size: 13px;
+        }
+
+        .gallery-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            font-size: 13px;
+            color: var(--color-sub);
+            margin: 0;
+        }
+
+        /* ブランディングロゴ */
+        .footer-brand {
+            font-size: 14px;
+            color: var(--color-sub);
+            letter-spacing: 0.1em;
+            margin-top: 16px;
         }
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>&Princess</h1>
         
-        <!-- お問い合わせカード -->
-        <div class="cta-container">
-            <a href="#" class="cta-button">✨ 公式LINEでお問い合わせ</a>
-            <a href="#" class="cta-button sub">✉️ メールでお問い合わせ</a>
+        <!-- 上部バッジ -->
+        <div>
+            <span class="top-badge">✨ 商業施設・店舗イベント専用プラン</span>
         </div>
 
-        <!-- イベント風用の写真カード -->
-        <div class="gallery-card">
-            <div class="gallery-image"></div>
-            <p>イベント風景 01</p>
+        <!-- キャッチコピー -->
+        <div class="catchphrase">
+            <h2>
+                お城のドレス、カメラのまばたき。<br>
+                小さな憧れに魔法をかけて<br>
+                物語の世界へご案内いたします。
+            </h2>
         </div>
+
+        <!-- メインカード：お問い合わせ -->
+        <div class="card">
+            <p class="card-text">
+                各種店舗・商業施設のファミリー集客に。<br>
+                アンケート回答や相談会の強力なフックとなる、出張型ドレス＆撮影会イベント『&Princess』
+            </p>
+            <a href="#" class="btn btn-primary">公式LINEでお問い合わせ・ご相談</a>
+            <a href="#" class="btn btn-outline">メールでお問い合わせ・お見積り</a>
+        </div>
+
+        <!-- ギャラリーカード -->
+        <div class="card">
+            <div class="gallery-image-box">
+                <!-- 写真を入れる場合はここに <img src="画像のURL" alt="イベント風景"> を入れてください -->
+                <span>イベント風景の写真が入ります</span>
+            </div>
+            <p class="gallery-caption">イベント風景 01</p>
+        </div>
+
+        <div class="footer-brand">
+            &Princess
+        </div>
+
     </div>
+
 </body>
 </html>
